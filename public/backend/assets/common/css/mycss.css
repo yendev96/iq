@@ -1,0 +1,209 @@
+table th, table td{
+	/*text-align: center;*/
+}
+
+.show-img{
+	margin-top: 5px;
+	width: 250px;
+}
+
+.show-img img{
+	max-width: 100%;
+}
+
+.sub-menu-aside{
+	background: #dfe4ed !important;
+}
+
+.sub-menu-aside li{
+	padding-left: 20px;
+}
+
+.sub-menu-aside li a:hover{
+	background: #dfe4ed !important;
+}
+
+.sub-menu-aside i{
+	font-size: 8px;
+}
+
+.bottom-page{
+	margin-top: 20px;
+}
+
+.check-table{
+	width: 25px;
+}
+
+.view{
+	width: 110px !important;
+}
+
+.box-social{
+	margin-bottom: 10px;
+}
+
+.box-social .input-group{
+	width: 100%;
+}
+
+.input-group .input-group-addon{
+	width: 60px;
+}
+
+.filter-category, .filter-role {
+	width: 150px !important;
+}
+
+.filter-anwser{
+	width: 100px !important;
+}
+
+.sort1{
+	text-align: left;
+}
+
+.pagination{
+	float: right;
+	list-style: none;
+}
+
+.sub-item-aside li{
+	padding-left: 20px;
+}
+
+.form-control{
+	border-color: #cecece !important;
+}
+
+.pagination li{
+	border-radius: 3px;
+	float: left;
+	background: #01a8fe;
+	margin-right: 3px;
+	color: #fff;
+	padding: 7px 0;
+
+}
+
+.heading-profile{
+    border-bottom: 1px solid #ececec;
+}
+
+.showpage{
+	width: 85px !important;
+}
+
+.pagination li a{
+	color: #fff;
+	padding: 7px 15px;
+	
+}
+
+.pagination li span{
+	color: #fff;
+	padding: 0 15px;
+
+}
+
+.pagination li.active{
+	background: red;
+}
+
+.btn-search{
+	position: relative;
+	height: 31px;
+	background: #1aa603 !important;
+	border-color: #1aa603 !important;
+}
+
+.btn-search i{
+	position: absolute;
+	top: 8px;
+	left: 9px;
+}
+
+.logo-container{
+	position: relative;
+}
+.message{
+    min-width: 350px;
+    height: 60px;
+    border:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+}
+
+
+.fa{
+	padding-right: 5px;
+}
+
+.my-panel-heading{
+	border-bottom: 1px solid #dfe4ed;
+	margin-bottom: 20px;
+}
+
+.title-panel{
+	float: left;
+}
+
+.my-dropdown-avatar{
+	margin-top: 11px;
+}
+
+.my-dropdown-toggle{
+	float: left;
+}
+
+.avatar-aside{
+	position: absolute;
+	top: 18px;
+	left: 10px;
+}
+
+.my-left-menu-list-root{
+	margin:0px;
+}
+
+.header-aside{
+	position: relative;
+    height: 70px;
+    color: #5B5B5B;
+}
+
+.id-aside-user{
+	position: absolute;
+	left: 65px;
+    top: 25px;
+}
+
+.level-aside-user{
+	position: absolute;
+	left: 115px;
+    top: 25px;
+}
+
+.my-fa-delete{
+	padding: 6px;
+	background: red;
+	border-radius: 3px;
+	color: #fff;
+	margin-right: 10px;
+}
+
+.my-fa-edit{
+	padding: 6px;
+	background: #1AA603;
+	border-radius: 3px;
+	color: #fff;
+	margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .quick-action {
+        display: none;
+    }
+}
