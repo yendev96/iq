@@ -1,6 +1,7 @@
 @extends('frontend.master')
-@section('title', 'Test IQ Online')
-@section('des', 'Test IQ Online')
+@section('title'){{$data_cat->seo_title}}@endsection
+@section('description'){{$data_cat->seo_description}}@endsection
+@section('url'){{$url}}@endsection
 @section('content')
 <div class="box-content">
 	<div class="box-item">

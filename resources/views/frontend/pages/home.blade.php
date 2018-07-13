@@ -1,6 +1,7 @@
 @extends('frontend.master')
-@section('title', 'Test IQ Online')
-@section('des', 'Test IQ Online')
+@section('title'){{$setting->site_title}}@endsection
+@section('description'){{$setting->site_description}}@endsection
+@section('url'){{url()}}@endsection
 @section('content')
 <div class="box-item">
 	<h1>Free psychological tests</h1>

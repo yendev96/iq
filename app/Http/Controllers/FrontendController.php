@@ -11,13 +11,17 @@ use App\Player;
 class FrontendController extends Controller
 {
 	public function index(){
-		return view('frontend.pages.home');
+		
+		$setting = DB::table('setting')->first();
+		return view('frontend.pages.home', compact('setting'));
 	}
 
 	public function testIq($code){
+		
 		$data = DB::table('question')->where('cat_slug', $code)->get();
+		$data_cat = DB::table('category')->where('slug', $code)->first();
 		$data_count = $data->count();
-		return view('frontend.pages.play', compact('data','data_count'));
+		return view('frontend.pages.play', compact('data','data_count', 'data_cat'));
 	}
 
 	public function checkIq(Request $request){

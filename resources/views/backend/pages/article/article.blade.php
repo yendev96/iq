@@ -63,7 +63,6 @@
                                             <th style="text-align: center">Action</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         @foreach($data as $item)
                                         <tr class="odd">
