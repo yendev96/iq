@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('title'){{$setting->site_title}}@endsection
 @section('description'){{$setting->site_description}}@endsection
-@section('url'){{url()}}@endsection
+@section('url'){{fullUrl()}}@endsection
 @section('content')
 <div class="box-item">
 	<h1>Free psychological tests</h1>

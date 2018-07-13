@@ -11,7 +11,6 @@ use App\Player;
 class FrontendController extends Controller
 {
 	public function index(){
-		
 		$setting = DB::table('setting')->first();
 		return view('frontend.pages.home', compact('setting'));
 	}

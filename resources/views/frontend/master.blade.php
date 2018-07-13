@@ -31,7 +31,6 @@
 	@yield('js')
 </body>
 <!-- Js -->
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="{{asset('/public/frontend/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('/public/frontend/js/myjquery.js')}}"></script>
 </html>

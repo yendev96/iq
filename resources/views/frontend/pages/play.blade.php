@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('title'){{$data_cat->seo_title}}@endsection
 @section('description'){{$data_cat->seo_description}}@endsection
-@section('url'){{$url}}@endsection
+@section('url'){{fullUrl()}}@endsection
 @section('content')
 <div class="box-content">
 	<div class="box-item">
@@ -104,121 +104,122 @@
 			</div>
 		</form>
 	</div>
-	<div class="box-result text-center">
-		<p class="p-result1">You answered correctly <span class="count-true-play"></span>/26 questions</p>
-		<p class="p-result1">Congratulations <span class="name-play"></span> your IQ is: <span class="result-iq"></span>/200
-		</div>
-		<div class="box-social">
-			<button type="button" name="action-play" class="btn-reload">Test Again</button>
-			<button type="button" name="action-play" class="btn-fb"><i class="fa fa-facebook-square"></i>Share</button>
-		</div>
-	</div>
-	@endsection
-	@section('js')
-	<script type="text/javascript">
-		var seconds = 20;
-		countDiv = document.getElementById('countdown'),
-		secondPass,
-		countDown = setInterval(function () {
-			"use strict";
-			secondPass();
-		}, 1000);
-		function secondPass() {
-			"use strict";
-			var minutes = Math.floor((seconds / 60)),
-			remSeconds = seconds % 60;
-			if (seconds < 10) {
-				remSeconds = "0" + remSeconds;
-			}
-			countDiv.innerHTML = minutes + ":" + remSeconds;
-			if (seconds > 0) {
-				seconds = seconds - 1;
-			} else {
-				clearInterval(countDown);
-				$('.item-play').hide();
-				$('.box-info').show();
-				$('#countdown').text('Time up');
-			}
-		}
-
-
-		$('.btn-play').click(function(){
-			$('.box-content').slideUp();
-			$('#id1').show();
-			$('.box-countdown').show();
-
-			$('#countdown').html('0:20');
-
-		})
-
-
-
-		$('.anwser-item').click(function(){
-			var a = $(this).attr('data-id');
-			var get_anwser = $(this).attr('data-true');
-			var get_select = $(this).attr('data-anwser');
-			if(get_anwser == get_select){
-				var count_true = $('.count_true').attr('value');
-				$('.count_true').attr('value', Number(count_true)+1);
-			}
-
-			$('#id'+ a).hide();
-			var b = Number(a)+ 1;
-			if(b <= <?php echo $data_count;?>){
-				$('#id'+ b).show();
-			}else{
-				//$('.box-countdown').hide();
-				//var timer = $('#countdown').text();
-				clearInterval(countDown);
-				$('.box-info').show();
-			}
-		})
-
-		$('.btn-result').click(function(){
-			var host       = window.location.protocol + "//" + window.location.host;
-			var name       = $('.name').val();
-			var age        = $('.age').val();
-			var gender     = $('.gender').val();
-			var email     = $('.email').val();
-			var count_true = $('.count_true').val();
-			if(name == '' ||age == '' || gender == '' || email == ''){
-				$('.error-info p').show();
-			}else{
-				$(this).html('Loading...');
-				
-				$.post(host + '/iq/check-iq',
-				{
-					"_token": "{{ csrf_token() }}",
-					name: name,
-					age: age,
-					gender: gender,
-					email: email,
-					count_true: count_true
-				},
-				function(data){
-
-					setTimeout(function(){
-						$('.box-info').hide();
-						$('.name-play').text(name);
-						$('.result-iq').text(data);
-						$('.count-true-play').text(count_true);
-						$('.box-result').show();
-						$('.box-social').show();
-					}, 3000);
-					
-				});
-			}
-
-		})
-
-		$('.btn-reload').click(function(){
-			$('.btn-play').click();
-			$('.box-result').hide();
-			$('.box-social').hide();
-			$('.count_true').attr('value', 0);
-		})
-
+	<div class="box-result">
+		<p class="p-result1">Congratulations <span class="name-play"></span> your IQ is:</p>
+		<p class="p-iq"><span class="result-iq"></span>/200</p>
 		
+		<p class="p-result1">You answered correctly <span class="count-true-play"></span>/26 questions</p>
+	</div>
+	<div class="box-social">
+		<button type="button" name="action-play" class="btn-reload">Test Again</button>
+		<button type="button" name="action-play" class="btn-fb"><i class="fa fa-facebook-square"></i>Share</button>
+	</div>
+</div>
+@endsection
+@section('js')
+<script type="text/javascript">
+	$(document).ready(function(){
+
+			// var seconds = 20;
+			// countDiv = document.getElementById('countdown'),
+			// secondPass,
+			// countDown = setInterval(function () {
+			// 	"use strict";
+			// 	secondPass();
+			// }, 1000);
+			// function secondPass() {
+			// 	"use strict";
+			// 	var minutes = Math.floor((seconds / 60)),
+			// 	remSeconds = seconds % 60;
+			// 	if (seconds < 10) {
+			// 		remSeconds = "0" + remSeconds;
+			// 	}
+			// 	countDiv.innerHTML = minutes + ":" + remSeconds;
+			// 	if (seconds > 0) {
+			// 		seconds = seconds - 1;
+			// 	} else {
+			// 		clearInterval(countDown);
+			// 		$('.item-play').hide();
+			// 		$('.box-info').show();
+			// 		$('#countdown').text('Time up');
+			// 	}
+			// }
+
+
+			$('.btn-play').click(function(){
+				$('.box-content').slideUp();
+				$('#id1').show();
+				//$('.box-countdown').show();
+
+			})
+
+
+
+			$('.anwser-item').click(function(){
+				var a = $(this).attr('data-id');
+				var get_anwser = $(this).attr('data-true');
+				var get_select = $(this).attr('data-anwser');
+				if(get_anwser == get_select){
+					var count_true = $('.count_true').attr('value');
+					$('.count_true').attr('value', Number(count_true)+1);
+				}
+
+				$('#id'+ a).hide();
+				var b = Number(a)+ 1;
+				if(b <= <?php echo $data_count;?>){
+					$('#id'+ b).show();
+				}else{
+				//clearInterval(countDown);
+				$('.box-info').show();
+			}
+		})
+
+			$('.btn-result').click(function(){
+				var host       = window.location.protocol + "//" + window.location.host;
+				var name       = $('.name').val();
+				var age        = $('.age').val();
+				var gender     = $('.gender').val();
+				var email     = $('.email').val();
+				var count_true = $('.count_true').val();
+				if(name == '' ||age == '' || gender == '' || email == ''){
+					$('.error-info p').show();
+				}else{
+					$(this).html('Loading...');
+
+					$.post(host + '/iq/check-iq',
+					{
+						"_token": "{{ csrf_token() }}",
+						name: name,
+						age: age,
+						gender: gender,
+						email: email,
+						count_true: count_true
+					},
+					function(data){
+
+						setTimeout(function(){
+							$('.box-info').hide();
+							$('.name-play').text(name);
+							$('.result-iq').text(data);
+							$('.count-true-play').text(count_true);
+							$('.box-result').show();
+							$('.box-social').show();
+						}, 3000);
+
+					});
+				}
+
+			})
+
+			$('.btn-reload').click(function(){
+				$('.btn-play').click();
+				$('.box-result').hide();
+				$('.box-social').hide();
+				$('.count_true').attr('value', 0);
+			})
+
+
+		})
 
 	</script>
 	@endsection

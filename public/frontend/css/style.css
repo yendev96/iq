@@ -167,12 +167,17 @@ html, body {
     border-radius: 4px;
 }
 
-.box-result .p-result1{
-	font-size: 23px;
+.box-result p{
+	text-align: center;
 }
 
-.box-result .p-result2{
-	font-size: 26px;
+.box-result .p-iq{
+	font-size: 35px; 
+	font-weight: bold;
+}
+
+.box-result .p-result1{
+	font-size: 23px;
 }
 
 .box-social{
