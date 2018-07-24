@@ -17,14 +17,14 @@ class LoginController extends Controller
     	];
 
     	if(Auth::attempt($data)){
-    		return redirect(url('backend'));
+    		return redirect(url('backend/home'));
     	}else{
-    		return redirect(url('login'));
+    		return redirect(url('backend/login'));
     	}
     }
 
     public function logout(){
     	Auth::guard('web')->logout();
-		return redirect(url('/login'));
+		return redirect(url('backend/login'));
     }
 }

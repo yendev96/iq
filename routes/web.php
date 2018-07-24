@@ -10,20 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// HOME
 Route::get('/', 'FrontendController@index');
-Route::get('test', function(){
-	echo bcrypt('vanyen96');
-});
-Route::get('/test-iq/{code}', 'FrontendController@testIq');
-Route::post('/check-iq', 'FrontendController@checkIq');
-Route::get('/login', 'LoginController@getLogin');
-Route::post('/login', 'LoginController@postLogin');
-Route::get('/logout', 'LoginController@logout');
+
+// Box IQ
+Route::get('/iq-test/{code}', 'Frontend\IQController@testIq');
+Route::post('/iq-test/check-iq', 'Frontend\IQController@checkIq');
+// Box EQ
+Route::get('/eq-test/for-free', 'Frontend\EQController@index');
+Route::post('/eq-test/check-eq', 'Frontend\EQController@checkEq');
+// Box Member
+Route::get('/member/high-iq', 'Frontend\IQController@highIqMember');
+Route::get('/member/high-eq', 'Frontend\EQController@highEqMember');
+// Box Aricle
+
+// Box Post
+Route::get('/{slug}', 'FrontendController@getPost');
+// Box Login - Logout
+Route::get('/backend/login', 'LoginController@getLogin');
+Route::post('/backend/login', 'LoginController@postLogin');
+Route::get('/backend/logout', 'LoginController@logout');
+
+// BACKEND
 Route::group(['middleware' => 'adminlogin'], function(){
 	Route::group(['prefix' => 'backend'], function() {
 	// Home
-		Route::get('/', 'BackendController@index');
+		Route::get('/home', 'BackendController@index');
 	// Question
 		Route::get('/question', 'QuestionController@index');
 		Route::get('/question/add', 'QuestionController@getAdd');
@@ -79,9 +91,23 @@ Route::group(['middleware' => 'adminlogin'], function(){
 		Route::post('/article/edit/{id}','ArticleController@postEdit');  
 		Route::get('/article/delete/{id}','ArticleController@delete');  
 		Route::post('/article/delete','ArticleController@deleteMul');  
+
+		// EQ
+		Route::get('/eq','EQController@index');  
+		Route::get('/eq/add','EQController@getAdd');  
+		Route::post('/eq/add','EQController@postAdd');  
+		Route::get('/eq/edit/{id}','EQController@getEdit');  
+		Route::post('/eq/edit','EQController@postEdit');  
+		Route::get('/eq/delete/{id}','EQController@delete');  
+		Route::post('/eq/delete','EQController@deleteMul');  
 	});
 
 
+
+
+	Route::get('test', function(){
+		echo bcrypt('vanyen96');
+	});
 
 
 });

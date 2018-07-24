@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Post;
+use DB;
+use View;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $post = DB::table('post')->skip(0)->take(5)->get();
+        View::share('post_aside', $post);
+        
     }
 
     /**

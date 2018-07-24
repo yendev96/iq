@@ -96,6 +96,14 @@
                             <input type="text" class="form-control" name="lastfm" value="{{$data_social->lastfm}}" placeholder="Last.fm">
                         </div>
                     </div>
+                    <div class="col-md-12 box-social">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-lastfm-square"></i>
+                            </span>
+                            <input type="text" class="form-control" name="myspace" value="{{$data_social->myspace}}" placeholder="Myspace.com">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <button type="submit" name="action-social" class="btn btn-primary width-150">Submit</button>
                     </div>

@@ -14,7 +14,7 @@
 
 			<h2 class="login-header">Log in</h2>
 
-			<form action="{{url('login')}}" method="post" class="login-container">
+			<form action="{{url('backend/login')}}" method="post" class="login-container">
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 				<p class="p-error">Không để trống</p>
 				<p><input type="text" name="email" class="email" placeholder="Email"></p>

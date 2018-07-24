@@ -23,7 +23,7 @@
     </div>
     <ul class="left-menu-list left-menu-list-root list-unstyled my-left-menu-list-root" style="margin:0">
         <li class="left-menu-list-active">
-            <a class="left-menu-link" href="{{url('/backend')}}">
+            <a class="left-menu-link" href="{{url('/backend/home')}}">
                 <i class="left-menu-link-icon icmn-home2"><!-- --></i>
                 <span class="menu-top-hidden">Dashboard</span> Alpha
             </a>
@@ -52,6 +52,11 @@
     <li>
         <a class="left-menu-link" href="{{url('backend/article')}}">
             <i class="left-menu-link-icon fa fa-folder"></i>Article Manager
+        </a>
+    </li>
+    <li>
+        <a class="left-menu-link" href="{{url('backend/eq')}}">
+            <i class="left-menu-link-icon fa fa-puzzle-piece"></i>EQ Result
         </a>
     </li>
     <!-- <li class="left-menu-list-submenu">

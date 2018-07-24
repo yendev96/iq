@@ -13,35 +13,6 @@
 	and reliable psychometrics that measure your personal preferences, mental traits, abilities, and processes.</p>
 </div>
 <div class="box-item">
-	<h2>Personality test</h2>
-	<p>
-		Take our free personality test and find out more about who you are and 
-		your strengths. This is valuable information for choosing a career and how to develop 
-		yourself for personal growth. Five key personality dimensions are explored in 
-		depth in a complete textual and graphical report.
-	</p>
-	<p>
-		Choose a career that matches your preferences and you will 
-		increase your chances of being successful! Take the career test now to learn more.
-	</p>
-	<a href="{{url('test-iq/for-kid')}}" class="btn-play" title="">Play Test</a>
-</div>
-<div class="box-item">
-	<h2>Free IQ test</h2>
-	<p>
-		This IQ test has all components that are standard in most IQ tests. 
-		It includes questions related to spatial intelligence, logical reasoning,
-		verbal intelligence and math.
-	</p>
-	<p>
-		Our free DISC personality test, based on the DISC types, determines your 
-		personality profile in just five minutes. Are you ready for a free DISC assesment? 
-		Find out how the DISC factors, Dominance, Influence, Steadiness and Compliance predict 
-		your behavior towards others and the everyday things you do.
-	</p>
-	<a href="" class="btn-play" title="">Play Test</a>
-</div>
-<div class="box-item">
 	<h2>IQ test training</h2>
 	<p>
 		Do you like taking IQ tests and quizzes? Want to do proper job test prep for an assessment? 
@@ -53,6 +24,22 @@
 		It includes questions related to spatial intelligence, logical reasoning,
 		verbal intelligence and math.
 	</p>
-	<a href="" class="btn-play" title="">Play Test</a>
+	<a href="{{url('iq-test/for-free')}}" class="btn-play" title="">Play Test</a>
 </div>
+<div class="box-item">
+	<h2>Free EQ Test</h2>
+	<p>
+		This IQ test has all components that are standard in most IQ tests. 
+		It includes questions related to spatial intelligence, logical reasoning,
+		verbal intelligence and math.
+	</p>
+	<p>
+		Our free DISC personality test, based on the DISC types, determines your 
+		personality profile in just five minutes. Are you ready for a free DISC assesment? 
+		Find out how the DISC factors, Dominance, Influence, Steadiness and Compliance predict 
+		your behavior towards others and the everyday things you do.
+	</p>
+	<a href="{{url('eq-test/for-free')}}" class="btn-play" title="">Play Test</a>
+</div>
+
 @endsection

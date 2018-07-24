@@ -16,7 +16,7 @@ class AdminLogin
     public function handle($request, Closure $next)
     {
         if (!Auth::guard('web')->check()) {
-            return redirect('/login');
+            return redirect('backend/login');
             //echo 'hi';
         }else{
             

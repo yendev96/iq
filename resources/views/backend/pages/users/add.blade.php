@@ -8,9 +8,6 @@
                 <h3>Add user</h3>
             </div>
            
-            <div class="button-addnew pull-right">
-                <a href="{{url('backend/user/add')}}" class="btn btn-danger margin-inline"><i class="fa fa-plus"></i> Add</a>
-            </div>
         </div>
     </div>
     <div class="panel-body">

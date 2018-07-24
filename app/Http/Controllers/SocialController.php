@@ -25,6 +25,7 @@ class SocialController extends Controller
 		$addSocial->soundcloud = $request->soundcloud;
 		$addSocial->vk         = $request->vk;
 		$addSocial->lastfm     = $request->lastfm;
+		$addSocial->myspace     = $request->myspace;
     	$addSocial->save();
     	Session::flash('success', 'Thành công');
 		return redirect(url('backend/social'));

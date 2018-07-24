@@ -5,7 +5,7 @@
 <!-- Title and Description -->
 <title>@yield('title')</title>
 <meta name="description" content="@yield('description')">
-
+<link href="{{asset('/public/backend')}}/assets/common/img/favicon.png" rel="icon" type="image/png">
 <!-- Open Graph data -->
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content=">@yield('title')"/>
@@ -31,3 +31,4 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+@yield('schema')

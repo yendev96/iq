@@ -20,7 +20,7 @@
                 <ul class="dropdown-menu dropdown-menu-right my-dropdown-avatar" aria-labelledby="" role="menu">
                     <a class="dropdown-item" href="{{url('backend/user/profile', Auth::guard('web')->user()->id)}}"><i class="dropdown-icon icmn-user"></i> Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('logout')}}"><i class="dropdown-icon icmn-exit"></i> Logout</a>
+                    <a class="dropdown-item" href="{{url('backend/logout')}}"><i class="dropdown-icon icmn-exit"></i> Logout</a>
                 </ul>
             </div>
         </div>
